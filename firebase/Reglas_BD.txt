@@ -1,0 +1,20 @@
+{
+  "rules": {
+    "usuarios": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid && !data.exists() && newData.child('rol').val() === 'monitor'"
+      }
+    },
+    "sistema": {
+      ".read": "auth != null",
+      ".write": "auth != null && root.child('usuarios').child(auth.uid).child('rol').val() === 'administrador'",
+      "alerta": {
+        ".write": "auth != null && root.child('usuarios').child(auth.uid).child('rol').val() === 'dispositivo'"
+      },
+      "hora": {
+        ".write": "auth != null && root.child('usuarios').child(auth.uid).child('rol').val() === 'dispositivo'"
+      }
+    }
+  }
+}
