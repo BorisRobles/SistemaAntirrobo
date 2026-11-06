@@ -3,7 +3,6 @@
 
 #include <WiFiS3.h>
 
-// ---- Datos privados (NO subir este archivo a GitHub con estos datos) ----
 #define WIFI_SSID "LAPTOP12"
 #define WIFI_CLAVE "boris123"
 #define API_KEY "AIzaSyBYC08XRFOr4jhJe-jCqcO_ahod8Hn1ppo"
